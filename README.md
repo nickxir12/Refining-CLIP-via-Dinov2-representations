@@ -19,8 +19,6 @@ By enforcing CLIP’s image encoder to follow the intra-modal structure of DINOv
 
 ## Methodology Overview
 
-
-
 We integrate DINOv2's structural priors into the CLIP training pipeline using two primary techniques:
 1.  **Lightweight Projection:** Mapping CLIP features into an intermediate space before enforcing the DINO-Soft loss.
 2.  **Symmetric Influence:** Utilizing loss terms that balance the refinement of both visual and textual representations.
@@ -34,3 +32,15 @@ We integrate DINOv2's structural priors into the CLIP training pipeline using tw
 | CLIP (Baseline) | 67.4% | 52.7% | 65.10% |
 | **DINO-Soft (Ours)** | **70.0% (+3.0%)** | **54.5% (+2.8%)** | **45.45%** |
 ---
+
+
+The primary modifications and new logic can be found in the following locations:
+
+* **Loss Function:** The implementation of the DINO-Soft Target loss and structural alignment objectives is located in:  
+    `src/open_clip/loss.py`
+* **Training Logic:** The main training loops and the integration of the DINOv2 intra-modal guidance are found in:  
+    `src/training/train.py`
+
+---
+
+This implementation is built upon the [open_clip](https://github.com/mlfoundations/open_clip) framework. We have extended the core library to support DINOv2-guided alignment and soft-target distillation.
