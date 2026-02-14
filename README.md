@@ -30,7 +30,7 @@ We integrate DINOv2's structural priors into the CLIP training pipeline using tw
 | Method | Text R@1 ↑ | Image R@1 ↑ | Clip-blind pairs ↓ |
 | :--- | :---: | :---: | :---: |
 | CLIP (Baseline) | 67.4% | 52.7% | 65.10% |
-| **DINO-Soft (Ours)** | **70.0% (+3.0%)** | **54.5% (+2.8%)** | **45.45%** |
+| **DINO-Soft (Ours)** | **70.4% (+3.0%)** | **54.5% (+2.8%)** | **45.45%** |
 ---
 
 
